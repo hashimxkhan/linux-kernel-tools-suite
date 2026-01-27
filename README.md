@@ -34,6 +34,18 @@ The implementation measures CPU usage by comparing changes in:
 - `/proc/stat`
 - `/proc/<pid>/stat`
 
+
+
+
+### netstat-lite
+A minimal TCP socket inspection tool that reads the kernel-maintained
+socket table from `/proc/net/tcp`.
+
+The tool parses raw kernel socket entries and converts hexadecimal
+addresses into human-readable IP/port pairs.
+
+**Kernel interface**
+- `/proc/net/tcp`
 ---
 
 ## Design Philosophy
@@ -42,9 +54,6 @@ The implementation measures CPU usage by comparing changes in:
 - **Transparent**: no hidden behavior behind libraries
 - **Defensive**: handles real OS race conditions
 - **Educational**: optimized for explainability, not features
-
-This project is not intended to replace existing system utilities, but to
-understand how they work internally.
 
 ---
 
@@ -69,4 +78,4 @@ This project is developed and tested inside a Linux environment.
 make
 ./mini_ps
 ./mini_top <pid>
-
+./mini_netstat
