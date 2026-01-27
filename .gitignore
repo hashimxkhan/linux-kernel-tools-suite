@@ -1,0 +1,8 @@
+# Compiled binaries
+mini_ps
+mini_top
+netstat_lite
+
+# Object files
+*.o
+
