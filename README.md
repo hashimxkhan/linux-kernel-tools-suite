@@ -22,7 +22,7 @@ reading kernel-generated metadata from `/proc/<pid>/stat`.
 - open / read / close (via libc)
 - getdents (via readdir)
 
-### mini-top
+## mini-top
 A minimal CPU accounting tool that reports per-process CPU usage by sampling
 scheduler time deltas.
 
@@ -37,7 +37,7 @@ The implementation measures CPU usage by comparing changes in:
 
 
 
-### netstat-lite
+## mini-netstat
 A minimal TCP socket inspection tool that reads the kernel-maintained
 socket table from `/proc/net/tcp`.
 
