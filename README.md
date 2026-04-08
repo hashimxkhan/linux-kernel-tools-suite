@@ -46,6 +46,27 @@ addresses into human-readable IP/port pairs.
 
 **Kernel interface**
 - `/proc/net/tcp`
+## proc_ancestry
+A process lineage tracer that walks the parent chain from a given PID all the
+way up to PID 1 (init), printing the full ancestry with process names and states.
+
+Unlike `pstree` which shows the full tree top-down, this traces a single
+process's lineage upward — showing exactly how it was spawned.
+
+**Kernel interface**
+- `/proc/<pid>/stat` (ppid field)
+
+## syscall_snoop
+A zero-overhead syscall peeker that reads `/proc/<pid>/syscall` to show what
+system call a process is currently blocked in, along with its arguments, stack
+pointer, and program counter.
+
+Unlike `strace`, this does not attach via ptrace — it simply reads a kernel-
+exported file, making it completely non-invasive.
+
+**Kernel interface**
+- `/proc/<pid>/syscall`
+
 ---
 
 ## Design Philosophy
@@ -79,3 +100,5 @@ make
 ./mini_ps
 ./mini_top <pid>
 ./mini_netstat
+./proc_ancestry <pid>
+./syscall_snoop <pid>
