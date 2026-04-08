@@ -47,11 +47,11 @@ addresses into human-readable IP/port pairs.
 **Kernel interface**
 - `/proc/net/tcp`
 ## proc_ancestry
-A process lineage tracer that walks the parent chain from a given PID all the
-way up to PID 1 (init), printing the full ancestry with process names and states.
+A process lineage tracer that walks up the parent chain from a given PID all the
+way up to root and prints the full ancestry with process names and states.
 
 Unlike `pstree` which shows the full tree top-down, this traces a single
-process's lineage upward — showing exactly how it was spawned.
+process's lineage upward and shows exactly how it was spawned.
 
 **Kernel interface**
 - `/proc/<pid>/stat` (ppid field)
