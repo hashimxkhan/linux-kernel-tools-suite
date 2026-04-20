@@ -69,31 +69,9 @@ exported file, making it completely non-invasive.
 
 ---
 
-## Design Philosophy
-
-- **Minimal**: each tool demonstrates one abstraction only
-- **Transparent**: no hidden behavior behind libraries
-- **Defensive**: handles real OS race conditions
-- **Educational**: optimized for explainability, not features
-
----
-
-## Tradeoffs & Non-Goals
-
-- No command-line flags
-- No sorting or filtering
-- No curses or UI layers
-- No PID → socket mapping
-- No attempt at production readiness
-
-These omissions are intentional to keep focus on OS abstractions rather than
-application complexity.
-
----
-
 ## Build & Run
 
-This project is developed and tested inside a Linux environment.
+This project is developed and tested inside a Linux environment within a Docker container.
 
 ```bash
 make
