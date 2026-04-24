@@ -46,6 +46,8 @@ addresses into human-readable IP/port pairs.
 
 **Kernel interface**
 - `/proc/net/tcp`
+
+
 ## proc_ancestry
 A process lineage tracer that walks up the parent chain from a given PID all the
 way up to root and prints the full ancestry with process names and states.
@@ -57,11 +59,11 @@ process's lineage upward and shows exactly how it was spawned.
 - `/proc/<pid>/stat` (ppid field)
 
 ## syscall_snoop
-A zero-overhead syscall peeker that reads `/proc/<pid>/syscall` to show what
+A no overhead syscall peeker that reads `/proc/<pid>/syscall` to show what
 system call a process is currently blocked in, along with its arguments, stack
 pointer, and program counter.
 
-Unlike `strace`, this does not attach via ptrace — it simply reads a kernel-
+Unlike `strace`, this does not attach via ptrace but it just reads a kernel-
 exported file, making it completely non-invasive.
 
 **Kernel interface**
@@ -71,7 +73,7 @@ exported file, making it completely non-invasive.
 
 ## Build & Run
 
-This project is developed and tested inside a Linux environment within a Docker container.
+This project is being developed and tested inside a Linux environment within a Docker container.
 
 ```bash
 make
